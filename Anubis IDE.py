@@ -123,7 +123,7 @@ class Widget(QWidget):
         # This widget is responsible of making Tab in IDE which makes the Text editor looks nice
         tab = QTabWidget()
         tx = text_widget()
-        tab.addTab(tx, "MicroPython_Tab"+"1")
+        tab.addTab(tx, "Tab"+"1")
 
         # second editor in which the error messeges and succeeded connections will be shown
         global text2
@@ -302,7 +302,7 @@ class UI(QMainWindow):
 
         # Seting the window Geometry
         self.setGeometry(200, 150, 600, 500)
-        self.setWindowTitle('Anubis_IDE')
+        self.setWindowTitle('Anubis IDE')
         self.setWindowIcon(QtGui.QIcon('Anubis.png'))
         
 
