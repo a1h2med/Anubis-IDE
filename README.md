@@ -1,7 +1,7 @@
 # Anubis IDE
 Created by **Graduation Project** Team at Faculty of **Engineering** **Ain-Shams** Univeristy .  
 
-(![Anubis]https://www13.0zz0.com/2020/07/22/02/845694578.png)
+(![Anubis](https://www13.0zz0.com/2020/07/22/02/845694578.png))
 
 ## Requirements 
 - Python
@@ -16,4 +16,4 @@ Created by **Graduation Project** Team at Faculty of **Engineering** **Ain-Shams
 ### Linux
 python3 Anubis.py
 
-(![Welcome]https://www4.0zz0.com/2020/07/22/02/133570716.png)
+(![Welcome](https://www4.0zz0.com/2020/07/22/02/133570716.png))
