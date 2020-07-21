@@ -302,7 +302,7 @@ class UI(QMainWindow):
 
         # Seting the window Geometry
         self.setGeometry(200, 150, 600, 500)
-        self.setWindowTitle('IDE')
+        self.setWindowTitle('Anubis_IDE')
         self.setWindowIcon(QtGui.QIcon('Anubis.png'))
         
 
