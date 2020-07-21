@@ -14,6 +14,6 @@ Created by **Graduation Project** Team at Faculty of **Engineering** **Ain-Shams
 - py Anubis.py
 
 ### Linux
-python3 Anubis.py
+- python3 Anubis.py
 
 (![Welcome](https://www4.0zz0.com/2020/07/22/02/133570716.png))
