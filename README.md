@@ -14,7 +14,7 @@ It's an **open source** IDE code Created by **Graduation Project** Team at Facul
 - Pyserial (**Important for detecting ports section**)
 - PYQT5
 
-## Setup 
+## Install Requirements 
 - pip3 install -r requirements.txt
 ### **NOTE**
 If python3 is the default use this: 
