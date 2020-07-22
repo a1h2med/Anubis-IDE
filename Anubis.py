@@ -320,7 +320,7 @@ class UI(QMainWindow):
         #
 #            ide.create_file(mytext)
 #            ide.upload_file(self.portNo)
-            text2.append("Your code was uploaded successfully.")
+            text2.append("Sorry, there is no attached compiler.")
 
         else:
             text2.append("Please Select Your Port Number First")
