@@ -11,7 +11,7 @@ Created by **Graduation Project** Team at Faculty of **Engineering** **Ain-Shams
 - just clone the repo 
 
 ## Run
--- First be sure you exist in the repo folder after cloning .
+- First be sure you exist in the repo folder after cloning .
 
 ### Windows
 - py Anubis.py
