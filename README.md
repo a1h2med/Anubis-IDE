@@ -15,6 +15,7 @@ It's an **open source** IDE code Created by **Graduation Project** Team at Facul
 - PYQT5
 
 ## Install Requirements 
+(It's recommended to create virtual env before installing the requirements)
 - pip3 install -r requirements.txt
 ### **NOTE**
 If python3 is the default use this: 
