@@ -7,7 +7,7 @@ It's an **open source** IDE code Created by **Graduation Project** Team at Facul
 - We created Anubis IDE as a task in our Graduation Project in Faculty of Engineering Ain-Shams Univeristy to help us edit and compile Micropython Codes .
 - We added some features on it like upload our code on **esp32**. **(this is feature is hidden)** 
 - We developed Anubis IDE using PYQT5 .
-- PyQt is a library that lets you use the Qt GUI framework from Python. Qt itself is written in C++. By using it from Python, you can build applications much more quickly while not sacrificing much of the speed of C++.
+- PyQt5 is a library that lets you use the Qt GUI framework from Python. Qt itself is written in C++. By using it from Python, you can build applications much more quickly while not sacrificing much of the speed of C++.
 
 ## Requirements 
 - Python
