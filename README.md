@@ -1,7 +1,12 @@
 # Anubis IDE
+It's an **open source** IDE code. 
 Created by **Graduation Project** Team at Faculty of **Engineering** **Ain-Shams** Univeristy .  
 
 (![Anubis](https://www13.0zz0.com/2020/07/22/02/845694578.png))
+
+# Objective
+We created Anubis IDE as a task in our Graduation Project in Faculty of Engineering Ain-Shams Univeristy to help us edit and compile Micropython Codes .
+We added some features on it like upload our code on **esp32**. **(this is feature is hidden)** 
 
 ## Requirements 
 - Python
