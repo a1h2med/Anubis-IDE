@@ -10,7 +10,7 @@ It's an **open source** IDE code Created by **Graduation Project** Team at Facul
 - PyQt5 is a library that lets you use the Qt GUI framework from Python. Qt itself is written in C++. By using it from Python, you can build applications much more quickly while not sacrificing much of the speed of C++.
 
 ## Requirements 
-- Python
+- Python3
 - Pyserial (**Important for detecting ports section**)
 - PYQT5
 
