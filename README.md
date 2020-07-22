@@ -14,6 +14,12 @@ It's an **open source** IDE code Created by **Graduation Project** Team at Facul
 - Pyserial (**Important for detecting ports section**)
 - PYQT5
 
+## Setup 
+- pip3 install -r requirements.txt
+### **NOTE**
+If python3 is the default use this: 
+- pip install -r requirements.txt 
+
 ## Run
 - Clone the repo .
 - Be sure you exist in the repo folder after cloning .
