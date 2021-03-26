@@ -6,6 +6,6 @@ iso8601==0.1.12
 PyQt5==5.15.0
 PyQt5-sip==12.8.0
 pyserial==3.4
-PyYAML==5.3.1
+PyYAML==5.4
 requests==2.24.0
 urllib3==1.25.9
