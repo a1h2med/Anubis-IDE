@@ -46,34 +46,52 @@ STYLES = {
        'numbers': format('brown'),
    }
 
-class PythonHighlighter(QSyntaxHighlighter):
+class CSHighlighter(QSyntaxHighlighter):
     """Syntax highlighter for the C# language.
     """
     # C# keywords
 
 
     keywords = [
-        'abstract', 'bool',	    'continue',	'decimal',	'default',
-        'event',    'explicit',	'extern',	'char',	    'checked',
-        'class',	'const',	'break',	'as',	    'base',
-        'delegate',	'is,'	    'lock',	    'long',	    'num',
-        'byte',     'case',	    'catch',	'false',	'finally',
-        'fixed',	'float',	'for',	    'foreach',  'static',
-        'goto',	    'if',	    'implicit',	'in',	    'int',
-        'interface', 'internal',	'do',	    'double',	'else',
-        'namespace', 'new',	    'null',	    'object',	'operator',
-        'out',	    'override',	'params',	'private',	'protected',
-        'public',	'readonly',	'sealed',	'short',	'sizeof',
-        'ref',	    'return',	'sbyte',	'stackalloc', 'static',
-        'string',	'struct',	'void',	    'volatile',	'while',
-        'true',	    'try',	    'switch',	'this',	    'throw',
-        'unchecked' 'unsafe',	'ushort',	'using',	'using',
-        'virtual',	'typeof',	'uint',	    'ulong',	'out',
-        'add',	    'alias',	'async',	'await',   	'dynamic',
-        'from', 	'get',	    'orderby',	'ascending', 'decending',
-        'group',	'into',	    'join',	    'let',	    'nameof',
-        'global',	'partial',	'set',	    'remove',   'select',
-        'value',	'var',	    'when',	    'Where',	'yield'
+        'abstract', 'as', 'base',
+        'bool', 'break', 'byte',
+        'case', 'catch', 'char',
+        'checked', 'class', 'const',
+        'continue', 'decimal', 'default',
+        'delegate', 'do', 'double',
+        'else', 'enum', 'event',
+        'explicit', 'extern', 'false',
+        'finally', 'fixed', 'float',
+        'for', 'foreach', 'goto',
+        'if', 'implicit', 'in',
+        'int', 'interface', 'internal',
+        'is', 'lock', 'long',
+        'namespace', 'new', 'null',
+        'object', 'operator', 'out',
+        'override', 'params', 'private',
+        'protected', 'public', 'readonly',
+        'ref', 'return', 'sbyte',
+        'sealed', 'short', 'sizeof',
+        'stackalloc', 'static', 'string',
+        'struct', 'switch', 'this',
+        'throw', 'true', 'try',
+        'typeof', 'uint', 'ulong',
+        'unchecked', 'unsafe', 'ushort',
+        'using', 'virtual', 'void',
+        'volatile', 'while', 'add',
+        'and', 'alias', 'ascending',
+        'args', 'async', 'await',
+        'by', 'descending', 'dynamic',
+        'equals', 'from', 'get',
+        'global', 'group', 'init',
+        'into', 'join', 'let',
+        'managed', 'nameof', 'nint',
+        'not', 'notnull', 'nuint',
+        'on', 'or', 'orderby',
+        'partial', 'record', 'remove',
+        'select', 'set', 'unmanaged',
+        'value','var', 'when',
+        'where', 'with', 'yield'
     ]
 
     # C# operators
@@ -109,11 +127,11 @@ class PythonHighlighter(QSyntaxHighlighter):
 
         # Keyword, operator, and brace rules
         rules += [(r'\b%s\b' % w, 0, STYLES['keyword'])
-                  for w in PythonHighlighter.keywords]
+                  for w in CSHighlighter.keywords]
         rules += [(r'%s' % o, 0, STYLES['operator'])
-                  for o in PythonHighlighter.operators]
+                  for o in CSHighlighter.operators]
         rules += [(r'%s' % b, 0, STYLES['brace'])
-                  for b in PythonHighlighter.braces]
+                  for b in CSHighlighter.braces]
 
         # All other rules
         rules += [
