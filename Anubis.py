@@ -8,6 +8,7 @@ import glob
 import serial
 
 import Python_Coloring
+import CS_Coloring
 from PyQt5 import QtCore
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
