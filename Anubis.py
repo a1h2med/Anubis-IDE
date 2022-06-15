@@ -15,6 +15,15 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from pathlib import Path
 
+from enum import Enum, auto
+
+class Language(Enum):
+    CSHARP = auto()
+    PYTHON = auto()
+
+def checkIfPythonFile(file):
+    return file.split(".")[-1] == 'py'
+
 def serial_ports():
     """ Lists serial port names
         :raises EnvironmentError:
@@ -70,7 +79,7 @@ class Signal(QObject):
 # Making text editor as A global variable (to solve the issue of being local to (self) in widget class)
 text = QTextEdit
 text2 = QTextEdit
-
+language = Language.PYTHON
 #
 #
 #
@@ -115,9 +124,10 @@ class text_widget(QWidget):
 #
 class Widget(QWidget):
 
-    def __init__(self):
+    def __init__(self, ui):
         super().__init__()
         self.initUI()
+        self.ui = ui
 
     def initUI(self):
 
@@ -186,7 +196,7 @@ class Widget(QWidget):
     # defining a new Slot (takes string) to save the text inside the first text editor
     @pyqtSlot(str)
     def Saving(s):
-        with open('main.py', 'w') as f:
+        with open(f"main.{'py' if language == Language.PYTHON else 'cs'}", 'w') as f:
             TEXT = text.toPlainText()
             f.write(TEXT)
 
@@ -200,6 +210,9 @@ class Widget(QWidget):
 
         nn = self.sender().model().filePath(index)
         nn = tuple([nn])
+
+        (UI.switch_to_py if checkIfPythonFile(
+            nn[0]) else UI.switch_to_cs)(self.ui)
 
         if nn[0]:
             f = open(nn[0],'r')
@@ -261,7 +274,7 @@ class UI(QMainWindow):
         filemenu = menu.addMenu('File')
         Port = menu.addMenu('Port')
         Run = menu.addMenu('Run')
-
+        language_menu = menu.addMenu('Language')
         # As any PC or laptop have many ports, so I need to list them to the User
         # so I made (Port_Action) to add the Ports got from (serial_ports()) function
         # copyrights of serial_ports() function goes back to a guy from stackoverflow(whome I can't remember his name), so thank you (unknown)
@@ -300,14 +313,20 @@ class UI(QMainWindow):
         filemenu.addAction(Close_Action)
         filemenu.addAction(Open_Action)
 
+        switch_to_cs_action = QAction('C#', self)
+        switch_to_cs_action.triggered.connect(self.switch_to_cs)
+        switch_to_py_action = QAction('Python', self)
+        switch_to_py_action.triggered.connect(self.switch_to_py)
 
+        language_menu.addAction(switch_to_py_action)
+        language_menu.addAction(switch_to_cs_action)
         # Seting the window Geometry
         self.setGeometry(200, 150, 600, 500)
         self.setWindowTitle('Anubis IDE')
         self.setWindowIcon(QtGui.QIcon('Anubis.png'))
         
 
-        widget = Widget()
+        widget = Widget(self)
 
         self.setCentralWidget(widget)
         self.show()
@@ -345,12 +364,24 @@ class UI(QMainWindow):
     def open(self):
         file_name = QFileDialog.getOpenFileName(self,'Open File','/home')
 
+        (self.switch_to_py if checkIfPythonFile(
+            file_name[0]) else self.switch_to_cs)()
+
         if file_name[0]:
             f = open(file_name[0],'r')
             with f:
                 data = f.read()
             self.Open_Signal.reading.emit(data)
 
+    def switch_to_cs(self):
+        global language
+        language = Language.CSHARP
+        CS_Coloring.CSHighlighter(text)
+
+    def switch_to_py(self):
+        global language
+        language = Language.PYTHON
+        Python_Coloring.PythonHighlighter(text)
 
 #
 #
