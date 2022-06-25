@@ -12,7 +12,7 @@ from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from pathlib import Path
-
+import PythonExec
 
 #
 #
@@ -267,11 +267,14 @@ class UI(QMainWindow):
 
     ###########################        Start OF the Functions          ##################
     def Run(self):
-        mytext = text.toPlainText()
-        #*************************************
-        # for now the output will be the code
-        #*************************************
-        text2.append(mytext)
+        sourceCode = text.toPlainText()
+        #**************************************************
+        # Execute the python and show the output and Errors
+        #**************************************************
+        output, error = PythonExec.runPythonCode(sourceCode)
+        text2.setText('')
+        text2.append(output)
+        text2.append(error)
 
     # I made this function to save the code into a file
     def save(self):
