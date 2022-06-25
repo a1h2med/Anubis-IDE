@@ -11,7 +11,6 @@ It's an **open source** IDE code Created by **Graduation Project** Team at Facul
 
 ## Requirements 
 - Python3
-- Pyserial (**Important for detecting ports section**)
 - PYQT5
 
 ## Install Requirements 
@@ -34,3 +33,6 @@ If python3 is the default use this:
 ## Welcome
 
 (![Welcome](https://www4.0zz0.com/2020/07/22/02/133570716.png))
+
+# Update:
+- The IDE now can execute code of python even complex one, unless you use built in libraries.
